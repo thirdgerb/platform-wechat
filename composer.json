@@ -1,0 +1,26 @@
+{
+    "name": "commune/platform-wechat",
+    "description": "wechat platform adapter for chatbot framework commune/studio-hyperf",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "thirdgerb",
+            "email": "thirdgerb@gmail.com"
+        }
+    ],
+    "autoload" : {
+        "psr-4" : {
+            "Commune\\Platform\\Wechat\\": "src/"
+        }
+    },
+    "minimum-stability": "RC",
+    "require": {
+        "php": ">=7.2",
+        "commune/chatbot-hyperf": "~0.1.0",
+        "overtrue/wechat": "~4.0.0"
+    },
+    "require-dev": {
+        "swoft/swoole-ide-helper": "^4.4"
+    }
+}
