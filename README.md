@@ -1,7 +1,11 @@
 本项目是对话机器人工作站 [commune/studio-hyperf](https://github.com/thirdgerb/studio-hyperf) 使用的平台适配包,
 用于对接微信公众号.
 
+底层使用的是 [EasyWechat](https://github.com/overtrue/wechat), 用于提供微信公众号的 API 对接.
+
 CommuneChatbot 的微信端 Demo 在微信公众号 "CommuneChatbot" 上, 欢迎查看.
+
+![微信公众号二维码](/qrcode.bmp)
 
 ## 引入包
 
@@ -11,8 +15,6 @@ CommuneChatbot 的微信端 Demo 在微信公众号 "CommuneChatbot" 上, 欢迎
 ```
 composer require commune/platform-wechat
 ```
-
-由于微信公众号的 package 将独立迭代, 可能需要按需更新版本.
 
 ## 创建测试号
 
