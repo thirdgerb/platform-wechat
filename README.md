@@ -5,8 +5,6 @@
 
 CommuneChatbot 的微信端 Demo 在微信公众号 "CommuneChatbot" 上, 欢迎查看.
 
-![微信公众号二维码](/qrcode.bmp)
-
 ## 引入包
 
 在 [commune/studio-hyperf](https://github.com/thirdgerb/studio-hyperf)
