@@ -14,10 +14,9 @@
             "Commune\\Platform\\Wechat\\": "src/"
         }
     },
-    "minimum-stability": "RC",
     "require": {
         "php": ">=7.2",
-        "commune/chatbot-hyperf": "~0.1.0",
+        "commune/chatbot-hyperf": "~0.1.0@dev",
         "overtrue/wechat": "~4.2.0"
     },
     "require-dev": {
