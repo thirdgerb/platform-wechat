@@ -18,7 +18,7 @@
     "require": {
         "php": ">=7.2",
         "commune/chatbot-hyperf": "~0.1.0",
-        "overtrue/wechat": "~4.0.0"
+        "overtrue/wechat": "~4.2.0"
     },
     "require-dev": {
         "swoft/swoole-ide-helper": "^4.4"
