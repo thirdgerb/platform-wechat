@@ -143,7 +143,7 @@ php bin/hyperf.php commune:start wechat
 ## 接受消息
 
 公众号机器人的 MessageRequest 类是 ```Commune\Platform\Wechat\Servers\OfficialAccountRequest``` .
-它需要负责把微信公众号的消息, 与 CommuneChatbot 的 [消息体系](/zh-cn/engineer/messages.md), 进行互相转换.
+它需要负责把微信公众号的消息, 与 CommuneChatbot 的 [消息体系](https://communechatbot.com/docs/#/zh-cn/engineer/messages), 进行互相转换.
 
 ### 默认支持的消息
 
@@ -208,7 +208,7 @@ class MyWechatServiceProvider extends ServiceProvider
 CommuneChatbot 默认的文字类消息```Commune\Chatbot\App\Messages\Text``` 则会直接渲染成公众号上的文字回复.
 
 > 微信公众号目前一次用户消息, 只允许同步返回一条服务端消息. 因此多个 Text 也会被合并成一条消息.
-> 而 [问答模块](/zh-cn/dm/questions.md) 的选项也无法做互动, 只能靠用户自己输入数字.
+> 而 [问答模块](https://communechatbot.com/docs/#/zh-cn/dm/questions.md) 的选项也无法做互动, 只能靠用户自己输入数字.
 
 
 查看 ```OfficialAccountRequest::renderSingleMessage()``` 方法可知,
