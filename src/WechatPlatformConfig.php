@@ -35,7 +35,7 @@ class WechatPlatformConfig extends IPlatformConfig
                 OfficialAccountProvider::class,
                 // 日志配置.
                 LoggerByMonologProvider::class => [
-                    'name' => 'chatlog',
+                    'name' => 'wechat',
                     'forceRegister' => true,
                 ],
             ],

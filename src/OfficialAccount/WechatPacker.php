@@ -98,7 +98,9 @@ class WechatPacker implements Packer
         $logger = $this->reqContainer->make(LoggerInterface::class);
         $logger->error($error);
 
-        $this->response->write('failure');
+        if (isset($this->response)) {
+            $this->response->write('failure');
+        }
     }
 
     public function destroy(): void
