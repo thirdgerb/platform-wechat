@@ -117,13 +117,14 @@ class WechatAdapter implements Adapter
         $scene = $this->getScene();
 
         $sessionId = $this->makeSessionId($openId);
-        $userName = $this->fetchUserData(
+        $userData = $this->fetchUserData(
             $container,
             $wechat,
             $openId,
             $logger
         );
 
+        $userName = $userData['nickname'] ?? 'guest';
         $input = IInputMsg::instance(
             $hostMsg,
             $sessionId,
