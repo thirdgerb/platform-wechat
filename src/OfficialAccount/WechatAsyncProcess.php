@@ -102,10 +102,12 @@ class WechatAsyncProcess extends AbstractProcess
         );
 
         $adapterName = $this->platform->getOfficialAccountConfig()->adapterName;
-        $this->platform->onPacker(
+        $adapter = $packer->adapt($adapterName, $this->shell->getId());
+        $this->platform->onAdapter(
             $packer,
-            $adapterName,
-            ShellOutputReqHandler::class
+            $adapter,
+            ShellOutputReqHandler::class,
+            $request
         );
     }
 
