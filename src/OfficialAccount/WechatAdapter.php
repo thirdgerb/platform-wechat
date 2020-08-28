@@ -267,6 +267,10 @@ class WechatAdapter implements Adapter
      */
     public function sendResponse(AppResponse $response): void
     {
+        if (!isset($this->packer->response)) {
+            return;
+        }
+
         $messages = $response->getOutputs();
         // 由于微信公众号现在不允许单个请求多个回复, 所以只好区别对待.
         if (count($messages) === 1) {

@@ -20,14 +20,18 @@ class WechatPlatform extends AbsHyperfServerPlatform
 
     public function getHyperfPlatformOption(): HfPlatformOption
     {
+        $config = $this->getOfficialAccountConfig();
+        return $config->toHfPlatformConfig();
+    }
+
+    public function getOfficialAccountConfig() : OfficialAccountPlatformConfig
+    {
         /**
          * @var OfficialAccountPlatformConfig $config
          */
-        $config = $this->host
+        return $this->host
             ->getProcContainer()
             ->make(OfficialAccountPlatformConfig::class);
-
-        return $config->toHfPlatformConfig();
     }
 
 

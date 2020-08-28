@@ -4,6 +4,7 @@ namespace Commune\Platform\Wechat\OfficialAccount;
 
 use Commune\Blueprint\Framework\ReqContainer;
 use Commune\Blueprint\Host;
+use Commune\Blueprint\Kernel\Handlers\ShellInputReqHandler;
 use Commune\Blueprint\Platform;
 use Commune\Blueprint\Shell;
 use Commune\Support\Uuid\HasIdGenerator;
@@ -63,7 +64,11 @@ class WechatServer implements OnRequestInterface, HasIdGenerator
          * @var OfficialAccountPlatformConfig $config
          */
         $config = $container->make(OfficialAccountPlatformConfig::class);
-        $this->platform->onPacker($packer, $config->adapterName);
+        $this->platform->onPacker(
+            $packer,
+            $config->adapterName,
+            ShellInputReqHandler::class
+        );
 
 
         $response->end();
