@@ -9,6 +9,7 @@
 namespace Commune\Platform\Wechat;
 
 
+use Commune\Framework\Providers\LoggerByMonologProvider;
 use Commune\Platform\Wechat\OfficialAccount\WechatAdapter;
 use Commune\Platform\Wechat\OfficialAccount\WechatServer;
 use Commune\Platform\Wechat\Options\EasyWechatConfig;
