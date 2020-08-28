@@ -42,7 +42,9 @@ class OfficialAccountPlatformConfig extends AbsOption
             'httpServer' => WechatServer::class,
 
 
-            'processes' => [],
+            'processes' => [
+                WechatAsyncProcess::class,
+            ],
             'callbacks' => [],
             'settings' => [],
             'exceptionHandlers' => [],

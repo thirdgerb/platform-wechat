@@ -11,6 +11,7 @@ namespace Commune\Platform\Wechat;
 
 use Commune\Framework\Providers\LoggerByMonologProvider;
 use Commune\Platform\Wechat\OfficialAccount\WechatAdapter;
+use Commune\Platform\Wechat\OfficialAccount\WechatAsyncProcess;
 use Commune\Platform\Wechat\OfficialAccount\WechatServer;
 use Commune\Platform\Wechat\Options\EasyWechatConfig;
 use Commune\Platform\IPlatformConfig;
@@ -44,8 +45,9 @@ class WechatPlatformConfig extends IPlatformConfig
                     'port' => env('WECHAT_PLATFORM_PORT', 10805),
                     'httpServer' => WechatServer::class,
 
-
-                    'processes' => [],
+                    'processes' => [
+                        WechatAsyncProcess::class,
+                    ],
                     'callbacks' => [],
                     'settings' => [],
                     'exceptionHandlers' => [],
