@@ -4,7 +4,7 @@
 namespace Commune\Platform\Wechat\Contracts;
 
 
-use Commune\Chatbot\Blueprint\Message\Message;
+use Commune\Protocals\HostMsg;
 use Commune\Platform\Wechat\Servers\OfficialAccountRequest;
 use EasyWeChat\Kernel\Contracts\MessageInterface;
 
@@ -17,5 +17,15 @@ use EasyWeChat\Kernel\Contracts\MessageInterface;
  */
 interface MessageBabel
 {
-    public function transform(Message $message) : MessageInterface;
+    /**
+     * @param HostMsg $message
+     * @return MessageInterface
+     */
+    public function transform(HostMsg $message) : MessageInterface;
+
+    /**
+     * @param HostMsg[] $messages
+     * @return MessageInterface
+     */
+    public function transformMulti(array $messages) : MessageInterface;
 }

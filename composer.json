@@ -15,10 +15,12 @@
         }
     },
     "require": {
-        "php": ">=7.2",
-        "commune/chatbot-hyperf": "~0.1.0@dev",
+        "php": ">=7.3",
+        "commune/chatbot-hyperf": "dev-master",
         "overtrue/wechat": "~4.2.0"
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require-dev": {
         "swoft/swoole-ide-helper": "^4.4"
     },
@@ -26,5 +28,15 @@
         "branch-alias": {
             "dev-master": "0.1.x-dev"
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../chatbot-hyperf"
+        },
+        {
+            "type": "path",
+            "url": "../chatbot"
+        }
+    ]
 }
