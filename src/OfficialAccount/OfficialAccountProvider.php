@@ -8,6 +8,7 @@
 
 namespace Commune\Platform\Wechat\OfficialAccount;
 
+use GuzzleHttp\Client;
 use Hyperf\Guzzle\CoroutineHandler;
 use GuzzleHttp\HandlerStack;
 use Commune\Contracts\Cache;
@@ -64,8 +65,8 @@ class OfficialAccountProvider extends ServiceProvider
 
             // client
             $clientConfig = $wechat['config']->get('http', []);
-            $clientConfig['handler'] =
-            $client = HandlerStack::create(new CoroutineHandler());
+            $clientConfig['handler'] = HandlerStack::create(new CoroutineHandler());
+            $client = new Client($clientConfig);
             $wechat->rebind('http_client', $client);
 
             return $wechat;
