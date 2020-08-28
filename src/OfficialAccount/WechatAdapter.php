@@ -211,7 +211,7 @@ class WechatAdapter implements Adapter
         switch ($msgType) {
 
             case MessageTypes::TEXT :
-                return IText::instance($message['Context'] ?? '');
+                return IText::instance($message['Content'] ?? '');
 
             case MessageTypes::EVENT:
                 $event = $message['Event'] ?? '';
