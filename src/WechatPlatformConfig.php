@@ -9,17 +9,13 @@
 namespace Commune\Platform\Wechat;
 
 
-use Commune\Chatbot\Hyperf\Servers\HfPlatformOption;
 use Commune\Platform\Wechat\OfficialAccount\WechatAdapter;
 use Commune\Platform\Wechat\OfficialAccount\WechatServer;
 use Commune\Platform\Wechat\Options\EasyWechatConfig;
-use Hyperf\Server\Server;
-use Commune\Chatbot\Hyperf\Servers\HfServerOption;
 use Commune\Platform\IPlatformConfig;
 use Commune\Platform\Wechat\OfficialAccount\OfficialAccountPlatformConfig;
 use Commune\Platform\Wechat\OfficialAccount\OfficialAccountProvider;
 use Commune\Platform\Wechat\OfficialAccount\WechatPlatform;
-use Hyperf\Server\SwooleEvent;
 
 class WechatPlatformConfig extends IPlatformConfig
 {
@@ -35,11 +31,16 @@ class WechatPlatformConfig extends IPlatformConfig
             'bootGhost' => false,
             'providers' => [
                 OfficialAccountProvider::class,
+                // 日志配置.
+                LoggerByMonologProvider::class => [
+                    'name' => 'chatlog',
+                    'forceRegister' => true,
+                ],
             ],
             'options' => [
                 OfficialAccountPlatformConfig::class => [
-                    'host' => '127.0.0.1',
-                    'port' => 9503,
+                    'host' => env('WECHAT_PLATFORM_HOST', '127.0.0.1'),
+                    'port' => env('WECHAT_PLATFORM_PORT', 10805),
                     'httpServer' => WechatServer::class,
 
 

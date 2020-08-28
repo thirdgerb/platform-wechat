@@ -48,7 +48,7 @@ class WechatServer implements OnRequestInterface, HasIdGenerator
     public function onRequest(SwooleRequest $request, SwooleResponse $response): void
     {
         $container = $this->getContainer();
-        $container->share(SwooleRequest::class, $response);
+        $container->share(SwooleRequest::class, $request);
 
         $packer = new WechatPacker(
             $this->platform,

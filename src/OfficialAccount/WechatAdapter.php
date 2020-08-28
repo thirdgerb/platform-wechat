@@ -12,7 +12,7 @@ namespace Commune\Platform\Wechat\OfficialAccount;
 use Commune\Contracts\Cache;
 use Psr\Log\LoggerInterface;
 use Commune\Contracts\Log\ExceptionReporter;
-use Commune\Hyperf\Support\HttpBabel;
+use Commune\Chatbot\Hyperf\Support\HttpBabel;
 use Commune\Platform\Wechat\Contracts\MessageBabel;
 use Commune\Platform\Wechat\Contracts\WechatMessage;
 use Commune\Protocals\HostMsg;
@@ -106,9 +106,7 @@ class WechatAdapter implements Adapter
         $wechat = $this->getWechat();
         $message = $wechat->server->getMessage();
         $hostMsg = $this->parseHostMessage($message);
-        $openId = $message['FromUserName'];
-
-
+        $openId = $message['FromUserName'] ?? null;
         $logger = $container->make(LoggerInterface::class);
         if (empty($openId)) {
             $logger->error("empty wechat openId: ". json_encode($message));

@@ -11,7 +11,7 @@ namespace Commune\Platform\Wechat\OfficialAccount;
 use Hyperf\Guzzle\CoroutineHandler;
 use GuzzleHttp\HandlerStack;
 use Commune\Contracts\Cache;
-use Commune\Hyperf\Support\HttpBabel;
+use Commune\Chatbot\Hyperf\Support\HttpBabel;
 use Commune\Platform\Wechat\Options\EasyWechatConfig;
 use EasyWeChat\OfficialAccount\Application as Wechat;
 use Commune\Container\ContainerContract;
