@@ -227,6 +227,7 @@ class WechatAdapter implements Adapter
                 $recognition = $message['Recognition'] ?? null;
                 // 加入语音识别.
                 if (isset($recognition)) {
+                    $recognition = rtrim($recognition, "。");
                     return VoiceRecognitionMsg::instance($id, $recognition);
                 } else {
                     return WechatAudioMsg::instance($id);
